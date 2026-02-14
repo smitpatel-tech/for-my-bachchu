@@ -1428,110 +1428,110 @@
         }
 
         // ========== LOVE METER - MORPHING INFINITY ==========
-        let loveLevel = 0;
-        let isInfinityMode = false;
-        let infinityTimeout = null;
+        // let loveLevel = 0;
+        // let isInfinityMode = false;
+        // let infinityTimeout = null;
 
-        const loveMeterMessages = [
-            "Keep tapping! 💕",
-            "Love is growing! 💖",
-            "So much love! 💗",
-            "Almost there! 💓",
-            "Overflowing! 💝"
-        ];
+        // const loveMeterMessages = [
+        //     "Keep tapping! 💕",
+        //     "Love is growing! 💖",
+        //     "So much love! 💗",
+        //     "Almost there! 💓",
+        //     "Overflowing! 💝"
+        // ];
 
-        function fillLoveMeter(amount = 10, sourceX = null, sourceY = null) {
-            if (sourceX !== null && sourceY !== null) {
-                showMeterFillIndicator(sourceX, sourceY);
-            }
+        // function fillLoveMeter(amount = 10, sourceX = null, sourceY = null) {
+        //     if (sourceX !== null && sourceY !== null) {
+        //         showMeterFillIndicator(sourceX, sourceY);
+        //     }
 
-            if (isInfinityMode) return;
+        //     if (isInfinityMode) return;
 
-            loveLevel = Math.min(100, loveLevel + amount);
+        //     loveLevel = Math.min(100, loveLevel + amount);
             
-            const fill = document.getElementById('loveMeterFill');
-            const text = document.getElementById('loveMeterText');
+        //     const fill = document.getElementById('loveMeterFill');
+        //     const text = document.getElementById('loveMeterText');
             
-            fill.style.width = loveLevel + '%';
+        //     fill.style.width = loveLevel + '%';
             
-            if (loveLevel < 20) {
-                text.textContent = loveMeterMessages[0];
-            } else if (loveLevel < 40) {
-                text.textContent = loveMeterMessages[1];
-            } else if (loveLevel < 60) {
-                text.textContent = loveMeterMessages[2];
-            } else if (loveLevel < 80) {
-                text.textContent = loveMeterMessages[3];
-            } else if (loveLevel < 100) {
-                text.textContent = loveMeterMessages[4];
-            }
+        //     if (loveLevel < 20) {
+        //         text.textContent = loveMeterMessages[0];
+        //     } else if (loveLevel < 40) {
+        //         text.textContent = loveMeterMessages[1];
+        //     } else if (loveLevel < 60) {
+        //         text.textContent = loveMeterMessages[2];
+        //     } else if (loveLevel < 80) {
+        //         text.textContent = loveMeterMessages[3];
+        //     } else if (loveLevel < 100) {
+        //         text.textContent = loveMeterMessages[4];
+        //     }
             
-            if (loveLevel >= 100) {
-                morphToInfinity();
-            }
-        }
+        //     if (loveLevel >= 100) {
+        //         morphToInfinity();
+        //     }
+        // }
 
-        function morphToInfinity() {
-            isInfinityMode = true;
+        // function morphToInfinity() {
+        //     isInfinityMode = true;
             
-            const meterContainer = document.getElementById('loveMeterContainer');
-            const infinityContainer = document.getElementById('infinityContainer');
-            const text = document.getElementById('loveMeterText');
+        //     const meterContainer = document.getElementById('loveMeterContainer');
+        //     const infinityContainer = document.getElementById('infinityContainer');
+        //     const text = document.getElementById('loveMeterText');
             
-            meterContainer.classList.add('morphing');
+        //     meterContainer.classList.add('morphing');
             
-            setTimeout(() => {
-                infinityContainer.classList.add('show');
-                text.textContent = '∞ Infinite Love for Anandiii ∞';
-                text.classList.add('infinity-text');
-            }, 300);
+        //     setTimeout(() => {
+        //         infinityContainer.classList.add('show');
+        //         text.textContent = '∞ Infinite Love for Anandiii ∞';
+        //         text.classList.add('infinity-text');
+        //     }, 300);
             
-            burstConfetti();
+        //     burstConfetti();
             
-            infinityTimeout = setTimeout(() => {
-                morphBackToBar();
-            }, 2500);
-        }
+        //     infinityTimeout = setTimeout(() => {
+        //         morphBackToBar();
+        //     }, 2500);
+        // }
 
-        function morphBackToBar() {
-            const meterContainer = document.getElementById('loveMeterContainer');
-            const infinityContainer = document.getElementById('infinityContainer');
-            const fill = document.getElementById('loveMeterFill');
-            const text = document.getElementById('loveMeterText');
+        // function morphBackToBar() {
+        //     const meterContainer = document.getElementById('loveMeterContainer');
+        //     const infinityContainer = document.getElementById('infinityContainer');
+        //     const fill = document.getElementById('loveMeterFill');
+        //     const text = document.getElementById('loveMeterText');
             
-            infinityContainer.classList.remove('show');
+        //     infinityContainer.classList.remove('show');
             
-            setTimeout(() => {
-                fill.style.transition = 'none';
-                fill.style.width = '0%';
-                fill.offsetHeight;
-                fill.style.transition = 'width 0.3s ease';
-                meterContainer.classList.remove('morphing');
-                text.textContent = "Let's fill it again! 💕";
-                text.classList.remove('infinity-text');
-                loveLevel = 0;
-                isInfinityMode = false;
-            }, 300);
-        }
+        //     setTimeout(() => {
+        //         fill.style.transition = 'none';
+        //         fill.style.width = '0%';
+        //         fill.offsetHeight;
+        //         fill.style.transition = 'width 0.3s ease';
+        //         meterContainer.classList.remove('morphing');
+        //         text.textContent = "Let's fill it again! 💕";
+        //         text.classList.remove('infinity-text');
+        //         loveLevel = 0;
+        //         isInfinityMode = false;
+        //     }, 300);
+        // }
 
-        function showMeterFillIndicator(x, y) {
-            const indicators = ['💕', '💖', '+10', '💗', '+5'];
-            const indicator = document.createElement('div');
-            indicator.className = 'meter-fill-indicator';
-            indicator.innerHTML = indicators[Math.floor(Math.random() * indicators.length)];
-            indicator.style.left = x + 'px';
-            indicator.style.top = y + 'px';
+        // function showMeterFillIndicator(x, y) {
+        //     const indicators = ['💕', '💖', '+10', '💗', '+5'];
+        //     const indicator = document.createElement('div');
+        //     indicator.className = 'meter-fill-indicator';
+        //     indicator.innerHTML = indicators[Math.floor(Math.random() * indicators.length)];
+        //     indicator.style.left = x + 'px';
+        //     indicator.style.top = y + 'px';
             
-            if (indicator.innerHTML.includes('+')) {
-                indicator.style.color = '#ffd700';
-                indicator.style.fontWeight = 'bold';
-                indicator.style.fontSize = '20px';
-                indicator.style.textShadow = '0 0 10px rgba(255,215,0,0.8)';
-            }
+        //     if (indicator.innerHTML.includes('+')) {
+        //         indicator.style.color = '#ffd700';
+        //         indicator.style.fontWeight = 'bold';
+        //         indicator.style.fontSize = '20px';
+        //         indicator.style.textShadow = '0 0 10px rgba(255,215,0,0.8)';
+        //     }
             
-            document.body.appendChild(indicator);
-            setTimeout(() => indicator.remove(), 800);
-        }
+        //     document.body.appendChild(indicator);
+        //     setTimeout(() => indicator.remove(), 800);
+        // }
 
                 // ========== UNIFIED INTERACTION HANDLER ==========
         function handleInteraction(event, type) {
